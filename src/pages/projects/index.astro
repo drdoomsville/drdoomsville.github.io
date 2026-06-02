@@ -1,0 +1,33 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHeading from '../../components/SectionHeading.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { sortByOrder } from '../../lib/projects';
+
+const projects = sortByOrder(await getCollection('projects'));
+---
+
+<BaseLayout title="Projects" description="Selected software projects and case studies.">
+  <div class="mx-auto max-w-5xl px-4 py-20">
+    <SectionHeading id="projects" eyebrow="Projects" title="Selected work" />
+
+    {
+      projects.length === 0 ? (
+        <p class="text-[var(--color-muted)]">Projects coming soon.</p>
+      ) : (
+        <div class="grid gap-5 sm:grid-cols-2">
+          {projects.map((p) => (
+            <ProjectCard
+              href={`/projects/${p.id}`}
+              title={p.data.title}
+              summary={p.data.summary}
+              tech={p.data.tech}
+              timeframe={p.data.timeframe}
+            />
+          ))}
+        </div>
+      )
+    }
+  </div>
+</BaseLayout>

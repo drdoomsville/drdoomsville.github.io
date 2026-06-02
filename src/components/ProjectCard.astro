@@ -1,0 +1,28 @@
+---
+interface Props {
+  href: string;
+  title: string;
+  summary: string;
+  tech: string[];
+  timeframe: string;
+}
+const { href, title, summary, tech, timeframe } = Astro.props;
+---
+
+<a
+  href={href}
+  class="group block rounded-lg border border-[var(--color-border)] p-6 transition-colors hover:border-brand-400"
+>
+  <div class="flex items-baseline justify-between gap-4">
+    <h3 class="font-display text-lg font-semibold group-hover:text-brand-700">{title}</h3>
+    <span class="shrink-0 text-sm text-[var(--color-muted)]">{timeframe}</span>
+  </div>
+  <p class="mt-2 text-[var(--color-muted)]">{summary}</p>
+  <ul class="mt-4 flex flex-wrap gap-2">
+    {
+      tech.map((t) => (
+        <li class="rounded-full bg-brand-50 px-3 py-1 text-xs font-medium text-brand-700">{t}</li>
+      ))
+    }
+  </ul>
+</a>

@@ -1,0 +1,56 @@
+---
+import { getCollection, render } from 'astro:content';
+import type { GetStaticPaths } from 'astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Prose from '../../components/Prose.astro';
+
+export const getStaticPaths = (async () => {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({
+    params: { slug: project.id },
+    props: { project },
+  }));
+}) satisfies GetStaticPaths;
+
+const { project } = Astro.props;
+const { Content } = await render(project);
+const { title, summary, tech, role, timeframe, repo, demo } = project.data;
+---
+
+<BaseLayout title={title} description={summary}>
+  <article class="mx-auto max-w-3xl px-4 py-20">
+    <a href="/projects" class="text-sm text-brand-700 hover:underline">← All projects</a>
+
+    <h1 class="mt-4 font-display text-4xl font-extrabold tracking-tight">{title}</h1>
+    <p class="mt-3 text-lg text-[var(--color-muted)]">{summary}</p>
+
+    <dl class="mt-6 grid grid-cols-2 gap-4 border-y border-[var(--color-border)] py-4 text-sm sm:grid-cols-3">
+      <div>
+        <dt class="text-[var(--color-muted)]">Role</dt>
+        <dd class="font-medium">{role}</dd>
+      </div>
+      <div>
+        <dt class="text-[var(--color-muted)]">When</dt>
+        <dd class="font-medium">{timeframe}</dd>
+      </div>
+      <div class="col-span-2 sm:col-span-1">
+        <dt class="text-[var(--color-muted)]">Links</dt>
+        <dd class="flex gap-3 font-medium">
+          {repo && <a class="text-brand-700 hover:underline" href={repo} target="_blank" rel="noopener noreferrer">Repo</a>}
+          {demo && <a class="text-brand-700 hover:underline" href={demo} target="_blank" rel="noopener noreferrer">Demo</a>}
+          {!repo && !demo && <span class="text-[var(--color-muted)]">—</span>}
+        </dd>
+      </div>
+    </dl>
+
+    <ul class="mt-4 flex flex-wrap gap-2">
+      {tech.map((t) => (
+        <li class="rounded-full bg-brand-50 px-3 py-1 text-xs font-medium text-brand-700">{t}</li>
+      ))}
+    </ul>
+
+    <div class="mt-10">
+      <Prose><Content /></Prose>
+    </div>
+  </article>
+</BaseLayout>
