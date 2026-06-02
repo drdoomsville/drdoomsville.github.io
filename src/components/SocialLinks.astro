@@ -1,0 +1,33 @@
+---
+import { site } from '../config/site';
+
+interface Props {
+  class?: string;
+}
+const { class: className } = Astro.props;
+---
+
+<ul class:list={['flex gap-4 text-sm', className]}>
+  {
+    site.socials.map((s) => (
+      <li>
+        <a
+          class="text-[var(--color-muted)] hover:text-[var(--color-fg)] transition-colors"
+          href={s.href}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          {s.label}
+        </a>
+      </li>
+    ))
+  }
+  <li>
+    <a
+      class="text-[var(--color-muted)] hover:text-[var(--color-fg)] transition-colors"
+      href={`mailto:${site.email}`}
+    >
+      Email
+    </a>
+  </li>
+</ul>
