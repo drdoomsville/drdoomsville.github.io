@@ -1,28 +1,41 @@
 ---
 interface Props {
   href: string;
+  index: string;
   title: string;
   summary: string;
   tech: string[];
   timeframe: string;
 }
-const { href, title, summary, tech, timeframe } = Astro.props;
+const { href, index, title, summary, tech, timeframe } = Astro.props;
 ---
 
-<a
-  href={href}
-  class="group block rounded-lg border border-[var(--color-border)] p-6 transition-colors hover:border-brand-400"
->
-  <div class="flex items-baseline justify-between gap-4">
-    <h2 class="font-display text-lg font-semibold group-hover:text-brand-700">{title}</h2>
-    <span class="shrink-0 text-sm text-[var(--color-muted)]">{timeframe}</span>
+<a href={href} class="hud-card reveal group relative block rounded-lg p-5">
+  <span class="hud-corner" style="top:6px;left:6px;border-left-width:2px;border-top-width:2px"></span>
+  <span class="hud-corner" style="bottom:6px;right:6px;border-right-width:2px;border-bottom-width:2px"></span>
+
+  <div class="flex items-baseline justify-between gap-3">
+    <span class="font-mono text-xs tracking-widest text-[var(--color-accent)]">{index} //</span>
+    <span class="font-mono text-[11px] tracking-wider text-[var(--color-muted)] whitespace-nowrap">{timeframe}</span>
   </div>
-  <p class="mt-2 text-[var(--color-muted)]">{summary}</p>
+
+  <h2 class="frost-text mt-2 font-display text-lg font-normal leading-tight">{title}</h2>
+  <p class="mt-2 text-sm leading-relaxed text-[var(--color-body)]">{summary}</p>
+
   <ul class="mt-4 flex flex-wrap gap-2">
-    {
-      tech.map((t) => (
-        <li class="rounded-full bg-brand-50 px-3 py-1 text-xs font-medium text-brand-700">{t}</li>
-      ))
-    }
+    {tech.map((t) => <li class="hud-chip">{t}</li>)}
   </ul>
 </a>
+
+<style>
+  .hud-card {
+    background: rgba(5, 18, 30, 0.6);
+    border: 1px solid var(--color-border);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+  }
+  .hud-card:hover {
+    border-color: var(--color-accent);
+    box-shadow: 0 0 24px rgba(34, 211, 238, 0.18);
+    transform: translateY(-2px);
+  }
+</style>
