@@ -19,7 +19,7 @@ import { site } from '../config/site';
           >
             <div class="flex items-center justify-between">
               <h3 class="font-display text-lg font-medium text-[var(--color-fg)]">{item.label}</h3>
-              <span class="text-[var(--color-accent)] transition-transform group-hover:translate-x-1">&rarr;</span>
+              <span class="text-[var(--color-accent)] transition-transform group-hover:translate-x-1" aria-hidden="true">&rarr;</span>
             </div>
             <p class="mt-2 text-sm text-[var(--color-muted)]">{item.blurb}</p>
           </a>

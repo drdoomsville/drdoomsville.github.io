@@ -548,7 +548,7 @@ import SocialLinks from './SocialLinks.astro';
       {site.tagline}
     </p>
     <div class="rise mt-8 flex flex-wrap items-center gap-3" style="animation-delay:.65s">
-      <a href="/projects" class="hud-btn hud-btn-solid">View Projects ▸</a>
+      <a href="/projects" class="hud-btn hud-btn-solid">View Projects<span aria-hidden="true"> ▸</span></a>
       <a href="/contact" class="hud-btn hud-btn-ghost">Get in Touch</a>
     </div>
     <div class="rise mt-8" style="animation-delay:.8s">
@@ -690,7 +690,7 @@ import { site } from '../config/site';
           >
             <div class="flex items-center justify-between">
               <h3 class="font-display text-lg font-medium text-[var(--color-fg)]">{item.label}</h3>
-              <span class="text-[var(--color-accent)] transition-transform group-hover:translate-x-1">&rarr;</span>
+              <span class="text-[var(--color-accent)] transition-transform group-hover:translate-x-1" aria-hidden="true">&rarr;</span>
             </div>
             <p class="mt-2 text-sm text-[var(--color-muted)]">{item.blurb}</p>
           </a>
@@ -1030,11 +1030,11 @@ const { entry } = Astro.props;
     {entry.role} · <span class="text-[var(--color-accent)]">{entry.company}</span>
   </h2>
   <p class="mt-1 text-[var(--color-body)]">{entry.summary}</p>
-  <ul class="mt-3 space-y-1 text-sm text-[var(--color-muted)]">
+  <ul class="mt-3 space-y-1 text-sm text-[var(--color-muted)]" role="list">
     {
       entry.highlights.map((h) => (
         <li class="relative pl-5">
-          <span class="absolute left-0 text-[var(--color-accent)]">▸</span>
+          <span class="absolute left-0 text-[var(--color-accent)]" aria-hidden="true">▸</span>
           {h}
         </li>
       ))
@@ -1166,7 +1166,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
     <p class="frost-text mt-4 font-display text-7xl font-light">404</p>
     <h1 class="mt-4 font-display text-2xl font-medium text-[var(--color-fg)]">This channel went dark.</h1>
     <p class="mt-2 text-[var(--color-muted)]">The link may be broken or the page moved.</p>
-    <a href="/" class="hud-btn hud-btn-solid mt-8">▸ Return Home</a>
+    <a href="/" class="hud-btn hud-btn-solid mt-8"><span aria-hidden="true">▸ </span>Return Home</a>
   </section>
 </BaseLayout>
 ```
