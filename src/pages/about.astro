@@ -7,7 +7,7 @@ import { site } from '../config/site';
 <BaseLayout title="About" description="Who I am and what I do.">
   <div class="mx-auto max-w-5xl px-4 py-20">
     <SectionHeading id="about" eyebrow="About" title="Who I am" tag="h1" />
-    <div class="max-w-2xl space-y-4 text-lg leading-relaxed text-[var(--color-fg)]">
+    <div class="frost-well reveal max-w-2xl space-y-4 text-lg leading-relaxed text-[var(--color-body)]">
       {site.longBio.map((p) => <p>{p}</p>)}
     </div>
   </div>
