@@ -7,7 +7,7 @@ import { site } from '../config/site';
 
 <BaseLayout title="Career" description="Where I've worked.">
   <div class="mx-auto max-w-5xl px-4 py-20">
-    <SectionHeading id="career" eyebrow="Career" title="Where I've worked" />
+    <SectionHeading id="career" eyebrow="Career" title="Where I've worked" tag="h1" />
     <div class="max-w-2xl">
       {site.careerTimeline.map((entry) => <TimelineItem entry={entry} />)}
     </div>

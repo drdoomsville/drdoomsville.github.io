@@ -3,13 +3,22 @@ interface Props {
   id: string;
   eyebrow?: string;
   title: string;
+  /** Heading tag for the title — 'h1' on standalone pages, 'h2' for sections beneath a hero. */
+  tag?: 'h1' | 'h2';
 }
-const { id, eyebrow, title } = Astro.props;
+const { id, eyebrow, title, tag = 'h2' } = Astro.props;
+const headingClass = 'mt-1 font-display text-3xl font-bold tracking-tight';
 ---
 
 <div class="mb-8" id={id}>
   {eyebrow && (
     <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-600">{eyebrow}</p>
   )}
-  <h2 class="mt-1 font-display text-3xl font-bold tracking-tight">{title}</h2>
+  {
+    tag === 'h1' ? (
+      <h1 class={headingClass}>{title}</h1>
+    ) : (
+      <h2 class={headingClass}>{title}</h2>
+    )
+  }
 </div>
