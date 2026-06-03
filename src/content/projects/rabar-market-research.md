@@ -3,7 +3,7 @@ title: Systematic Trading Systems at Rabar Market Research
 summary: C++ engineer (1 of 8, fully remote) on a composable Document/View trading platform that ran multiple systematic trend-following models across 20–50+ global futures markets for a fund managing close to $1 billion.
 tech: ["C++", "Document/View Framework", "Quantitative Trading", "Systematic Trend-Following", "Futures & Equities"]
 role: C++ Software Engineer
-timeframe: "2000 – 2003"
+timeframe: "January 2000 – 2003"
 order: 8
 ---
 
