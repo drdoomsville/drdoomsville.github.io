@@ -10,25 +10,27 @@ const isActive = (href: string) =>
 ---
 
 <nav class="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
-  <a href="/" class="font-display text-base font-bold tracking-tight">{site.name}</a>
+  <a href="/" class="font-mono text-sm font-bold tracking-widest text-[var(--color-fg)]">
+    <span class="text-[var(--color-accent)]">WK</span>//SYS
+  </a>
 
   <input type="checkbox" id="nav-toggle" class="peer hidden" />
   <label
     for="nav-toggle"
-    class="cursor-pointer text-sm sm:hidden"
+    class="cursor-pointer font-mono text-xs uppercase tracking-widest text-[var(--color-accent)] sm:hidden"
     aria-label="Toggle navigation">Menu</label
   >
 
   <ul
-    class="absolute left-0 right-0 top-full hidden flex-col gap-1 border-b border-[var(--color-border)] bg-white px-4 py-3 text-sm font-medium peer-checked:flex sm:static sm:flex sm:flex-row sm:gap-6 sm:border-0 sm:bg-transparent sm:p-0"
+    class="absolute left-0 right-0 top-full hidden flex-col gap-1 border-b border-[var(--color-border)] bg-[var(--color-bg-panel)] px-4 py-3 font-mono text-xs uppercase tracking-widest peer-checked:flex sm:static sm:flex sm:flex-row sm:gap-6 sm:border-0 sm:bg-transparent sm:p-0"
   >
     {
       site.nav.map((l) => (
         <li>
           <a
             class:list={[
-              'block py-1 transition-colors hover:text-[var(--color-fg)]',
-              isActive(l.href) ? 'text-brand-700' : 'text-[var(--color-muted)]',
+              'block py-1 transition-colors hover:text-[var(--color-accent)]',
+              isActive(l.href) ? 'text-[var(--color-accent)]' : 'text-[var(--color-muted)]',
             ]}
             aria-current={isActive(l.href) ? 'page' : undefined}
             href={l.href}
