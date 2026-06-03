@@ -7,12 +7,14 @@ import { site } from '../config/site';
 <BaseLayout title="Personal" description="Beyond the keyboard.">
   <div class="mx-auto max-w-5xl px-4 py-20">
     <SectionHeading id="personal" eyebrow="Personal" title="Beyond the keyboard" tag="h1" />
-    <p class="max-w-2xl text-lg leading-relaxed text-[var(--color-fg)]">{site.family}</p>
+    <div class="frost-well reveal max-w-2xl">
+      <p class="text-lg leading-relaxed text-[var(--color-body)]">{site.family}</p>
+    </div>
     <div class="mt-8 grid gap-4 sm:grid-cols-3">
       {
         site.hobbies.map((h) => (
-          <div class="rounded-lg border border-[var(--color-border)] p-5">
-            <h2 class="font-display font-semibold">{h.title}</h2>
+          <div class="reveal rounded-lg border border-[var(--color-border)] bg-[rgba(5,18,30,0.6)] p-5 transition-colors hover:border-[var(--color-accent)]">
+            <h2 class="font-display font-medium text-[var(--color-fg)]">{h.title}</h2>
             <p class="mt-1 text-sm text-[var(--color-muted)]">{h.blurb}</p>
           </div>
         ))
