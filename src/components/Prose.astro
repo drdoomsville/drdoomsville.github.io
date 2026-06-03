@@ -1,15 +1,19 @@
 ---
-// Styles rendered Markdown. Usage: <Prose><Content /></Prose>
+// Styles rendered Markdown for the dark theme. Usage: <Prose><Content /></Prose>
 ---
 
 <div
-  class="max-w-none space-y-4 leading-relaxed
-         [&_h2]:font-display [&_h2]:text-2xl [&_h2]:font-bold [&_h2]:mt-10 [&_h2]:mb-2
-         [&_h3]:font-display [&_h3]:text-xl [&_h3]:font-semibold [&_h3]:mt-8
-         [&_p]:text-[var(--color-fg)]
-         [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-1
-         [&_a]:text-brand-700 [&_a]:underline [&_a:hover]:text-brand-600
-         [&_code]:rounded [&_code]:bg-brand-50 [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:text-sm"
+  class="max-w-none space-y-4 leading-relaxed text-[var(--color-body)]
+         [&_h2]:font-display [&_h2]:text-2xl [&_h2]:font-medium [&_h2]:text-[var(--color-fg)] [&_h2]:mt-10 [&_h2]:mb-2
+         [&_h3]:font-display [&_h3]:text-xl [&_h3]:font-medium [&_h3]:text-[var(--color-fg)] [&_h3]:mt-8
+         [&_p]:text-[var(--color-body)]
+         [&_strong]:text-[var(--color-fg)] [&_strong]:font-semibold
+         [&_em]:text-[var(--color-muted)]
+         [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-1 [&_ul]:marker:text-[var(--color-accent)]
+         [&_a]:text-[var(--color-accent)] [&_a]:underline [&_a:hover]:text-[var(--color-accent-bright)]
+         [&_blockquote]:border-l-2 [&_blockquote]:border-[var(--color-accent)] [&_blockquote]:pl-4 [&_blockquote]:text-[var(--color-muted)] [&_blockquote]:italic
+         [&_hr]:my-8 [&_hr]:border-0 [&_hr]:h-px [&_hr]:bg-gradient-to-r [&_hr]:from-[var(--color-accent)] [&_hr]:to-transparent
+         [&_code]:rounded [&_code]:bg-[var(--color-bg-raised)] [&_code]:px-1.5 [&_code]:py-0.5 [&_code]:text-sm [&_code]:text-[var(--color-accent-ice)] [&_code]:font-mono"
 >
   <slot />
 </div>
