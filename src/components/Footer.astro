@@ -1,11 +1,14 @@
 ---
 import { site } from '../config/site';
 import SocialLinks from './SocialLinks.astro';
+
+const year = new Date().getFullYear();
 ---
 
-<footer class="border-t border-[var(--color-border)] mt-24">
-  <div class="mx-auto flex max-w-5xl flex-col items-center gap-4 px-4 py-10 text-sm text-[var(--color-muted)] sm:flex-row sm:justify-between">
-    <p>© {new Date().getFullYear()} {site.name}</p>
+<footer class="relative mt-24 border-t border-[var(--color-border)]">
+  <div class="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-[var(--color-accent)] to-transparent"></div>
+  <div class="mx-auto flex max-w-5xl flex-col items-center gap-4 px-4 py-10 font-mono text-xs uppercase tracking-widest text-[var(--color-muted)] sm:flex-row sm:justify-between">
+    <p>© {year} {site.name} · <span class="text-[var(--color-accent)]">System Online</span> · Charlotte, NC</p>
     <SocialLinks />
   </div>
 </footer>
