@@ -7,13 +7,11 @@ interface Props {
   tag?: 'h1' | 'h2';
 }
 const { id, eyebrow, title, tag = 'h2' } = Astro.props;
-const headingClass = 'mt-1 font-display text-3xl font-bold tracking-tight';
+const headingClass = 'frost-text mt-2 font-display text-3xl font-medium tracking-tight';
 ---
 
-<div class="mb-8" id={id}>
-  {eyebrow && (
-    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-600">{eyebrow}</p>
-  )}
+<div class="mb-8 reveal" id={id}>
+  {eyebrow && <p class="mono-eyebrow">// {eyebrow}</p>}
   {
     tag === 'h1' ? (
       <h1 class={headingClass}>{title}</h1>
@@ -21,4 +19,5 @@ const headingClass = 'mt-1 font-display text-3xl font-bold tracking-tight';
       <h2 class={headingClass}>{title}</h2>
     )
   }
+  <div class="mt-4 h-px w-24 bg-gradient-to-r from-[var(--color-accent)] to-transparent"></div>
 </div>
