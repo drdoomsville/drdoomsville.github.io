@@ -393,10 +393,12 @@ const isActive = (href: string) =>
     <span class="text-[var(--color-accent)]">WK</span>//SYS
   </a>
 
-  <input type="checkbox" id="nav-toggle" class="peer hidden" />
+  {/* sr-only (not `hidden`) keeps the checkbox in the tab order so the menu is
+      keyboard-operable; the label shows a focus ring when the checkbox is focused. */}
+  <input type="checkbox" id="nav-toggle" class="peer sr-only" />
   <label
     for="nav-toggle"
-    class="cursor-pointer font-mono text-xs uppercase tracking-widest text-[var(--color-accent)] sm:hidden"
+    class="cursor-pointer rounded font-mono text-xs uppercase tracking-widest text-[var(--color-accent)] peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-[var(--color-accent)] sm:hidden"
     aria-label="Toggle navigation">Menu</label
   >
 
