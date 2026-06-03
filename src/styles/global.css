@@ -104,6 +104,8 @@ body::before {
 .hud-btn-ghost { border: 1px solid var(--color-border-strong); color: var(--color-accent-ice); }
 .hud-btn-ghost:hover { background: rgba(34, 211, 238, 0.1); }
 
+/* Note: backdrop-filter creates a new stacking context, so any `position: sticky`
+   child inside a frost-well would be clipped to this element. */
 .frost-well {
   position: relative;
   overflow: hidden;

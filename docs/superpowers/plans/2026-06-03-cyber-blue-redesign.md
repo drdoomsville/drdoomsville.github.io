@@ -742,7 +742,7 @@ const { href, index, title, summary, tech, timeframe } = Astro.props;
   <span class="hud-corner" style="bottom:6px;right:6px;border-right-width:2px;border-bottom-width:2px"></span>
 
   <div class="flex items-baseline justify-between gap-3">
-    <span class="font-mono text-xs tracking-widest text-[var(--color-accent)]">{index} //</span>
+    <span class="font-mono text-xs tracking-widest text-[var(--color-accent)]">{index}<span aria-hidden="true"> //</span></span>
     <span class="font-mono text-[11px] tracking-wider text-[var(--color-muted)] whitespace-nowrap">{timeframe}</span>
   </div>
 
@@ -860,6 +860,7 @@ git commit -m "Pass padded order index into HUD Dossier cards"
          [&_strong]:text-[var(--color-fg)] [&_strong]:font-semibold
          [&_em]:text-[var(--color-muted)]
          [&_ul]:list-disc [&_ul]:pl-6 [&_ul]:space-y-1 [&_ul]:marker:text-[var(--color-accent)]
+         [&_ol]:list-decimal [&_ol]:pl-6 [&_ol]:space-y-1 [&_ol]:marker:text-[var(--color-accent)]
          [&_a]:text-[var(--color-accent)] [&_a]:underline [&_a:hover]:text-[var(--color-accent-bright)]
          [&_blockquote]:border-l-2 [&_blockquote]:border-[var(--color-accent)] [&_blockquote]:pl-4 [&_blockquote]:text-[var(--color-muted)] [&_blockquote]:italic
          [&_hr]:my-8 [&_hr]:border-0 [&_hr]:h-px [&_hr]:bg-gradient-to-r [&_hr]:from-[var(--color-accent)] [&_hr]:to-transparent

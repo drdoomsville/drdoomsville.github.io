@@ -15,7 +15,7 @@ const { href, index, title, summary, tech, timeframe } = Astro.props;
   <span class="hud-corner" style="bottom:6px;right:6px;border-right-width:2px;border-bottom-width:2px"></span>
 
   <div class="flex items-baseline justify-between gap-3">
-    <span class="font-mono text-xs tracking-widest text-[var(--color-accent)]">{index} //</span>
+    <span class="font-mono text-xs tracking-widest text-[var(--color-accent)]">{index}<span aria-hidden="true"> //</span></span>
     <span class="font-mono text-[11px] tracking-wider text-[var(--color-muted)] whitespace-nowrap">{timeframe}</span>
   </div>
 
