@@ -16,6 +16,12 @@ export interface Hobby {
   blurb: string;
 }
 
+export interface NavItem {
+  label: string;
+  href: string;
+  blurb: string;
+}
+
 export interface SiteConfig {
   name: string;
   /** Browser tab / SEO title suffix */
@@ -29,6 +35,8 @@ export interface SiteConfig {
   longBio: string[];
   email: string;
   socials: SocialLink[];
+  /** Top-level pages — single source of truth for the nav and the home directory grid */
+  nav: NavItem[];
   careerTimeline: TimelineEntry[];
   family: string;
   hobbies: Hobby[];
@@ -50,6 +58,13 @@ export const site: SiteConfig = {
   email: 'sonnyk487@gmail.com',
   socials: [
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/william-kocak-a3026811' },
+  ],
+  nav: [
+    { label: 'About', href: '/about', blurb: 'Three decades across banking, pharma, and financial services.' },
+    { label: 'Career', href: '/career', blurb: 'The companies and roles along the way.' },
+    { label: 'Projects', href: '/projects', blurb: 'Selected work and case studies.' },
+    { label: 'Personal', href: '/personal', blurb: 'A little about life beyond the keyboard.' },
+    { label: 'Contact', href: '/contact', blurb: 'The fastest ways to reach me.' },
   ],
   careerTimeline: [
     {

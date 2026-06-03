@@ -1,95 +1,30 @@
 ---
-import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Hero from '../components/Hero.astro';
 import SectionHeading from '../components/SectionHeading.astro';
-import TimelineItem from '../components/TimelineItem.astro';
-import SocialLinks from '../components/SocialLinks.astro';
-import ProjectCard from '../components/ProjectCard.astro';
-import { sortByOrder, onlyFeatured } from '../lib/projects';
 import { site } from '../config/site';
-
-const featured = sortByOrder(onlyFeatured(await getCollection('projects')));
 ---
 
 <BaseLayout>
   <Hero />
 
-  <div class="mx-auto max-w-5xl px-4">
-    <!-- About -->
-    <section class="py-20">
-      <SectionHeading id="about" eyebrow="About" title="Who I am" />
-      <div class="max-w-2xl space-y-4 text-lg leading-relaxed text-[var(--color-fg)]">
-        {site.longBio.map((p) => <p>{p}</p>)}
-      </div>
-    </section>
-
-    <!-- Career -->
-    <section class="py-20 border-t border-[var(--color-border)]">
-      <SectionHeading id="career" eyebrow="Career" title="Where I've worked" />
-      <div class="max-w-2xl">
-        {site.careerTimeline.map((entry) => <TimelineItem entry={entry} />)}
-      </div>
-    </section>
-
-    <!-- Featured projects -->
-    <section class="py-20 border-t border-[var(--color-border)]">
-      <div class="flex items-end justify-between">
-        <SectionHeading id="featured" eyebrow="Projects" title="Featured work" />
-        <a href="/projects" class="mb-8 shrink-0 text-sm font-medium text-brand-700 hover:underline">
-          All projects →
-        </a>
-      </div>
+  <div class="mx-auto max-w-5xl px-4 py-20">
+    <SectionHeading id="explore" eyebrow="Explore" title="Find your way around" />
+    <div class="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
       {
-        featured.length === 0 ? (
-          <p class="text-[var(--color-muted)]">Projects coming soon.</p>
-        ) : (
-          <div class="grid gap-5 sm:grid-cols-2">
-            {featured.map((p) => (
-              <ProjectCard
-                href={`/projects/${p.id}`}
-                title={p.data.title}
-                summary={p.data.summary}
-                tech={p.data.tech}
-                timeframe={p.data.timeframe}
-              />
-            ))}
-          </div>
-        )
-      }
-    </section>
-
-    <!-- Personal -->
-    <section class="py-20 border-t border-[var(--color-border)]">
-      <SectionHeading id="personal" eyebrow="Personal" title="Beyond the keyboard" />
-      <p class="max-w-2xl text-lg leading-relaxed text-[var(--color-fg)]">{site.family}</p>
-      <div class="mt-8 grid gap-4 sm:grid-cols-3">
-        {
-          site.hobbies.map((h) => (
-            <div class="rounded-lg border border-[var(--color-border)] p-5">
-              <h3 class="font-display font-semibold">{h.title}</h3>
-              <p class="mt-1 text-sm text-[var(--color-muted)]">{h.blurb}</p>
+        site.nav.map((item) => (
+          <a
+            href={item.href}
+            class="group rounded-lg border border-[var(--color-border)] p-6 transition-colors hover:border-brand-500 hover:bg-brand-50"
+          >
+            <div class="flex items-center justify-between">
+              <h3 class="font-display text-lg font-semibold text-[var(--color-fg)]">{item.label}</h3>
+              <span class="text-brand-600 transition-transform group-hover:translate-x-1">&rarr;</span>
             </div>
-          ))
-        }
-      </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="py-20 border-t border-[var(--color-border)]">
-      <SectionHeading id="contact" eyebrow="Contact" title="Let's talk" />
-      <p class="max-w-2xl text-lg text-[var(--color-fg)]">
-        The fastest way to reach me is email. I'm open to interesting software roles and conversations.
-      </p>
-      <div class="mt-6 flex flex-wrap items-center gap-4">
-        <a
-          href={`mailto:${site.email}`}
-          class="rounded-md bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-700 transition-colors"
-        >
-          {site.email}
-        </a>
-        <SocialLinks />
-      </div>
-    </section>
+            <p class="mt-2 text-sm text-[var(--color-muted)]">{item.blurb}</p>
+          </a>
+        ))
+      }
+    </div>
   </div>
 </BaseLayout>

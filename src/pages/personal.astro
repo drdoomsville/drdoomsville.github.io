@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import { site } from '../config/site';
+---
+
+<BaseLayout title="Personal" description="Beyond the keyboard.">
+  <div class="mx-auto max-w-5xl px-4 py-20">
+    <SectionHeading id="personal" eyebrow="Personal" title="Beyond the keyboard" />
+    <p class="max-w-2xl text-lg leading-relaxed text-[var(--color-fg)]">{site.family}</p>
+    <div class="mt-8 grid gap-4 sm:grid-cols-3">
+      {
+        site.hobbies.map((h) => (
+          <div class="rounded-lg border border-[var(--color-border)] p-5">
+            <h3 class="font-display font-semibold">{h.title}</h3>
+            <p class="mt-1 text-sm text-[var(--color-muted)]">{h.blurb}</p>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</BaseLayout>

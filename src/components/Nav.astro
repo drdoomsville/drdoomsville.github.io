@@ -1,13 +1,12 @@
 ---
 import { site } from '../config/site';
 
-const links = [
-  { label: 'About', href: '/#about' },
-  { label: 'Career', href: '/#career' },
-  { label: 'Projects', href: '/projects' },
-  { label: 'Personal', href: '/#personal' },
-  { label: 'Contact', href: '/#contact' },
-];
+const path = Astro.url.pathname;
+// Trailing-slash-insensitive match; project detail pages keep "Projects" active.
+const normalize = (p: string) => (p.length > 1 ? p.replace(/\/$/, '') : p);
+const current = normalize(path);
+const isActive = (href: string) =>
+  href === '/' ? current === '/' : current === href || current.startsWith(href + '/');
 ---
 
 <nav class="mx-auto flex max-w-5xl items-center justify-between px-4 py-3">
@@ -24,9 +23,16 @@ const links = [
     class="absolute left-0 right-0 top-full hidden flex-col gap-1 border-b border-[var(--color-border)] bg-white px-4 py-3 text-sm font-medium peer-checked:flex sm:static sm:flex sm:flex-row sm:gap-6 sm:border-0 sm:bg-transparent sm:p-0"
   >
     {
-      links.map((l) => (
+      site.nav.map((l) => (
         <li>
-          <a class="block py-1 text-[var(--color-muted)] hover:text-[var(--color-fg)] transition-colors" href={l.href}>
+          <a
+            class:list={[
+              'block py-1 transition-colors hover:text-[var(--color-fg)]',
+              isActive(l.href) ? 'text-brand-700' : 'text-[var(--color-muted)]',
+            ]}
+            aria-current={isActive(l.href) ? 'page' : undefined}
+            href={l.href}
+          >
             {l.label}
           </a>
         </li>

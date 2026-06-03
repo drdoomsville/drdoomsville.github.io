@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeading from '../components/SectionHeading.astro';
+import SocialLinks from '../components/SocialLinks.astro';
+import { site } from '../config/site';
+---
+
+<BaseLayout title="Contact" description="Get in touch.">
+  <div class="mx-auto max-w-5xl px-4 py-20">
+    <SectionHeading id="contact" eyebrow="Contact" title="Let's talk" />
+    <p class="max-w-2xl text-lg text-[var(--color-fg)]">
+      The fastest way to reach me is email. I'm open to interesting software roles and conversations.
+    </p>
+    <div class="mt-6 flex flex-wrap items-center gap-4">
+      <a
+        href={`mailto:${site.email}`}
+        class="rounded-md bg-brand-600 px-5 py-2.5 text-sm font-semibold text-white hover:bg-brand-700 transition-colors"
+      >
+        {site.email}
+      </a>
+      <SocialLinks />
+    </div>
+  </div>
+</BaseLayout>
