@@ -3,31 +3,69 @@ import { site } from '../config/site';
 import SocialLinks from './SocialLinks.astro';
 ---
 
-<section class="bg-gradient-to-br from-brand-900 via-brand-700 to-brand-500 text-white">
-  <div class="mx-auto max-w-5xl px-4 py-24 sm:py-32">
-    <p class="text-xs font-semibold uppercase tracking-[0.2em] text-brand-200">
-      {site.kicker}
+<section class="hero relative overflow-hidden">
+  <div class="hero-grid" aria-hidden="true"></div>
+  <div class="hero-scan" aria-hidden="true"></div>
+  <span class="hud-corner" style="top:18px;left:18px;border-left-width:2px;border-top-width:2px" aria-hidden="true"></span>
+  <span class="hud-corner" style="top:18px;right:18px;border-right-width:2px;border-top-width:2px" aria-hidden="true"></span>
+
+  <div class="relative mx-auto max-w-5xl px-4 py-24 sm:py-32">
+    <p class="rise font-mono text-xs tracking-[0.18em] text-[var(--color-accent-sky)]" style="animation-delay:.1s">
+      <span class="status-dot" aria-hidden="true"></span>{site.kicker}
     </p>
-    <h1 class="mt-4 font-display text-4xl font-extrabold tracking-tight sm:text-6xl">
+    <h1 class="hero-name frost-text mt-5 font-display text-5xl font-light uppercase leading-none tracking-wide sm:text-7xl">
       {site.name}
     </h1>
-    <p class="mt-5 max-w-2xl text-lg text-brand-100 sm:text-xl">
+    <p class="rise mt-6 max-w-2xl text-lg text-[var(--color-body)] sm:text-xl" style="animation-delay:.5s">
       {site.tagline}
     </p>
-    <div class="mt-8 flex flex-wrap items-center gap-3">
-      <a
-        href="/projects"
-        class="rounded-md bg-white px-5 py-2.5 text-sm font-semibold text-brand-700 hover:bg-brand-50 transition-colors"
-      >
-        View projects
-      </a>
-      <a
-        href="/contact"
-        class="rounded-md border border-white/30 px-5 py-2.5 text-sm font-semibold text-white hover:bg-white/10 transition-colors"
-      >
-        Get in touch
-      </a>
+    <div class="rise mt-8 flex flex-wrap items-center gap-3" style="animation-delay:.65s">
+      <a href="/projects" class="hud-btn hud-btn-solid">View Projects ▸</a>
+      <a href="/contact" class="hud-btn hud-btn-ghost">Get in Touch</a>
     </div>
-    <SocialLinks class="mt-8 [&_a]:text-brand-100 [&_a:hover]:text-white" />
+    <div class="rise mt-8" style="animation-delay:.8s">
+      <SocialLinks />
+    </div>
   </div>
 </section>
+
+<style>
+  .hero { background: radial-gradient(120% 90% at 80% 0%, #0b3a5c 0%, #06121f 55%, #03070d 100%); }
+  .hero-grid {
+    position: absolute;
+    inset: -40px;
+    pointer-events: none;
+    background:
+      repeating-linear-gradient(0deg, transparent 0 26px, rgba(56, 189, 248, 0.09) 26px 27px),
+      repeating-linear-gradient(90deg, transparent 0 26px, rgba(56, 189, 248, 0.09) 26px 27px);
+    animation: hud-drift 14s linear infinite;
+  }
+  .hero-scan {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 140px;
+    pointer-events: none;
+    background: linear-gradient(180deg, transparent, rgba(56, 189, 248, 0.1), transparent);
+    animation: hud-sweep 6s ease-in-out infinite;
+  }
+  .status-dot {
+    display: inline-block;
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    margin-right: 8px;
+    box-shadow: 0 0 10px var(--color-accent);
+    animation: hud-pulse 1.8s ease-in-out infinite;
+  }
+  .hero-name {
+    opacity: 0;
+    width: max-content;
+    max-width: 100%;
+    animation: hud-rise 0.7s ease 0.3s forwards, hud-bloom 6s ease-in-out 1.4s infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .hero-name { opacity: 1 !important; }
+  }
+</style>
