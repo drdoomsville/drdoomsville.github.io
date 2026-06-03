@@ -15,11 +15,11 @@ import { site } from '../config/site';
         site.nav.map((item) => (
           <a
             href={item.href}
-            class="group rounded-xl bg-brand-50 p-6 shadow-sm ring-1 ring-brand-100/60 transition duration-200 hover:-translate-y-1 hover:bg-brand-100 hover:shadow-md hover:shadow-brand-500/10"
+            class="reveal group rounded-xl border border-[var(--color-border)] bg-[rgba(5,18,30,0.55)] p-6 transition duration-200 hover:-translate-y-1 hover:border-[var(--color-accent)] hover:shadow-[0_0_24px_rgba(34,211,238,0.18)]"
           >
             <div class="flex items-center justify-between">
-              <h3 class="font-display text-lg font-semibold text-[var(--color-fg)]">{item.label}</h3>
-              <span class="text-brand-600 transition-transform group-hover:translate-x-1">&rarr;</span>
+              <h3 class="font-display text-lg font-medium text-[var(--color-fg)]">{item.label}</h3>
+              <span class="text-[var(--color-accent)] transition-transform group-hover:translate-x-1">&rarr;</span>
             </div>
             <p class="mt-2 text-sm text-[var(--color-muted)]">{item.blurb}</p>
           </a>
