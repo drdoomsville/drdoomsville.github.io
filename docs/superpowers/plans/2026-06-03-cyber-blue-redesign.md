@@ -738,8 +738,8 @@ const { href, index, title, summary, tech, timeframe } = Astro.props;
 ---
 
 <a href={href} class="hud-card reveal group relative block rounded-lg p-5">
-  <span class="hud-corner" style="top:6px;left:6px;border-left-width:2px;border-top-width:2px"></span>
-  <span class="hud-corner" style="bottom:6px;right:6px;border-right-width:2px;border-bottom-width:2px"></span>
+  <span class="hud-corner" style="top:6px;left:6px;border-left-width:2px;border-top-width:2px" aria-hidden="true"></span>
+  <span class="hud-corner" style="bottom:6px;right:6px;border-right-width:2px;border-bottom-width:2px" aria-hidden="true"></span>
 
   <div class="flex items-baseline justify-between gap-3">
     <span class="font-mono text-xs tracking-widest text-[var(--color-accent)]">{index}<span aria-hidden="true"> //</span></span>
