@@ -4,7 +4,6 @@ summary: Cloud automation on Azure supporting fault-tolerant, high-throughput pa
 tech: ["Azure", "Python", "C#", "Java", "Blue Prism", "CI/CD"]
 role: Senior Manager, Automation
 timeframe: "2021 – 2023"
-featured: false
 order: 4
 ---
 
