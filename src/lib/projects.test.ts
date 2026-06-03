@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest';
-import { sortByOrder, type HasProjectMeta } from './projects';
+import { sortByOrder, padIndex, type HasProjectMeta } from './projects';
 
 const make = (order: number): HasProjectMeta => ({
   data: { order },
@@ -12,5 +12,13 @@ describe('sortByOrder', () => {
     expect(result.map((p) => p.data.order)).toEqual([1, 2, 3]);
     // original untouched
     expect(input.map((p) => p.data.order)).toEqual([3, 1, 2]);
+  });
+});
+
+describe('padIndex', () => {
+  it('zero-pads single digits and leaves two-digit numbers', () => {
+    expect(padIndex(8)).toBe('08');
+    expect(padIndex(10)).toBe('10');
+    expect(padIndex(1)).toBe('01');
   });
 });
