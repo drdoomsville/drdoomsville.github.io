@@ -1,6 +1,8 @@
 ---
 import { site } from '../config/site';
 import SocialLinks from './SocialLinks.astro';
+
+const portraits = ['/pics/7408.jpg', '/pics/7411.jpg', '/pics/7414.jpg', '/pics/7417.jpg'];
 ---
 
 <section class="hero relative overflow-hidden">
@@ -9,22 +11,42 @@ import SocialLinks from './SocialLinks.astro';
   <span class="hud-corner" style="top:18px;left:18px;border-left-width:2px;border-top-width:2px" aria-hidden="true"></span>
   <span class="hud-corner" style="top:18px;right:18px;border-right-width:2px;border-top-width:2px" aria-hidden="true"></span>
 
-  <div class="relative mx-auto max-w-5xl px-4 py-24 sm:py-32">
-    <p class="rise font-mono text-xs tracking-[0.18em] text-[var(--color-accent-sky)]" style="animation-delay:.1s">
-      <span class="status-dot" aria-hidden="true"></span>{site.kicker}
-    </p>
-    <h1 class="hero-name frost-text mt-5 font-display text-5xl font-light uppercase leading-none tracking-wide sm:text-7xl">
-      {site.name}
-    </h1>
-    <p class="rise mt-6 max-w-2xl text-lg text-[var(--color-body)] sm:text-xl" style="animation-delay:.5s">
-      {site.tagline}
-    </p>
-    <div class="rise mt-8 flex flex-wrap items-center gap-3" style="animation-delay:.65s">
-      <a href="/projects" class="hud-btn hud-btn-solid">View Projects<span aria-hidden="true"> ▸</span></a>
-      <a href="/contact" class="hud-btn hud-btn-ghost">Get in Touch</a>
+  <div class="relative mx-auto grid max-w-5xl items-center gap-12 px-4 py-24 sm:py-32 lg:grid-cols-[1fr_auto]">
+    <div>
+      <p class="rise font-mono text-xs tracking-[0.18em] text-[var(--color-accent-sky)]" style="animation-delay:.1s">
+        <span class="status-dot" aria-hidden="true"></span>{site.kicker}
+      </p>
+      <h1 class="hero-name frost-text mt-5 font-display text-5xl font-light uppercase leading-none tracking-wide sm:text-7xl">
+        {site.name}
+      </h1>
+      <p class="rise mt-6 max-w-2xl text-lg text-[var(--color-body)] sm:text-xl" style="animation-delay:.5s">
+        {site.tagline}
+      </p>
+      <div class="rise mt-8 flex flex-wrap items-center gap-3" style="animation-delay:.65s">
+        <a href="/projects" class="hud-btn hud-btn-solid">View Projects<span aria-hidden="true"> ▸</span></a>
+        <a href="/contact" class="hud-btn hud-btn-ghost">Get in Touch</a>
+      </div>
+      <div class="rise mt-8" style="animation-delay:.8s">
+        <SocialLinks />
+      </div>
     </div>
-    <div class="rise mt-8" style="animation-delay:.8s">
-      <SocialLinks />
+
+    <div class="rise w-full max-w-[300px] justify-self-center lg:justify-self-end" style="animation-delay:.55s">
+      <div class="portrait-frame relative aspect-[4/5] overflow-hidden rounded-lg">
+        {
+          portraits.map((src, i) => (
+            <img
+              src={src}
+              alt={i === 0 ? `Portrait of ${site.name}` : ''}
+              class:list={['portrait-img', i === 0 && 'is-active']}
+              decoding="async"
+              loading={i === 0 ? 'eager' : 'lazy'}
+            />
+          ))
+        }
+        <span class="hud-corner" style="top:8px;left:8px;border-left-width:2px;border-top-width:2px" aria-hidden="true"></span>
+        <span class="hud-corner" style="bottom:8px;right:8px;border-right-width:2px;border-bottom-width:2px" aria-hidden="true"></span>
+      </div>
     </div>
   </div>
 </section>
@@ -66,7 +88,43 @@ import SocialLinks from './SocialLinks.astro';
     max-width: 100%;
     animation: hud-rise 0.7s ease 0.3s forwards, hud-bloom 6s ease-in-out 1.4s infinite;
   }
+
+  /* rotating portrait */
+  .portrait-frame {
+    border: 1px solid var(--color-border-strong);
+    box-shadow: 0 0 40px rgba(34, 211, 238, 0.18);
+    background: var(--color-bg-panel);
+  }
+  .portrait-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 28%;
+    opacity: 0;
+    transition: opacity 1.2s ease;
+  }
+  .portrait-img.is-active {
+    opacity: 1;
+  }
+
   @media (prefers-reduced-motion: reduce) {
     .hero-name { opacity: 1 !important; }
+    .portrait-img { transition: none; }
   }
 </style>
+
+<script is:inline>
+  (() => {
+    const imgs = document.querySelectorAll('.portrait-img');
+    if (imgs.length < 2) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    let i = 0;
+    setInterval(() => {
+      imgs[i].classList.remove('is-active');
+      i = (i + 1) % imgs.length;
+      imgs[i].classList.add('is-active');
+    }, 4000);
+  })();
+</script>
