@@ -25,3 +25,6 @@ pnpm-debug.log*
 
 # superpowers brainstorm scratch
 .superpowers/
+
+# full-res purchased image originals (preserved locally, not shipped or committed)
+docs/pics/originals/
