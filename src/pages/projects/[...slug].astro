@@ -13,6 +13,7 @@ export const getStaticPaths = (async () => {
 }) satisfies GetStaticPaths;
 
 const { project } = Astro.props;
+const hasStory = (await getCollection('stories')).some((s) => s.id === project.id);
 const { Content } = await render(project);
 const { title, summary, tech, role, timeframe, repo, demo } = project.data;
 ---
@@ -50,5 +51,12 @@ const { title, summary, tech, role, timeframe, repo, demo } = project.data;
     <div class="frost-well mt-10">
       <Prose><Content /></Prose>
     </div>
+    {
+      hasStory && (
+        <a href={`/stories/${project.id}`} class="hud-btn hud-btn-ghost mt-8 inline-flex">
+          Read the full story<span aria-hidden="true"> →</span>
+        </a>
+      )
+    }
   </article>
 </BaseLayout>
