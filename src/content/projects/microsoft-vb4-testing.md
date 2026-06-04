@@ -4,7 +4,7 @@ summary: Software Engineer in Test on the VB 4.0 forms/UI layer, building a self
 tech: ["Visual Basic 4.0", "Test Automation", "Distributed Test Harness", "Windows 95"]
 role: Software Engineer in Test
 timeframe: "1993 – 1995"
-order: 10
+order: 13
 ---
 
 ## Problem
