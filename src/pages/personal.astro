@@ -10,12 +10,17 @@ import { site } from '../config/site';
     <div class="frost-well reveal max-w-2xl">
       <p class="text-lg leading-relaxed text-[var(--color-body)]">{site.family}</p>
     </div>
-    <div class="mt-8 grid gap-4 sm:grid-cols-3">
+    <p class="reveal mono-eyebrow mt-12">// Off the clock</p>
+    <div class="mt-4 grid gap-5 sm:grid-cols-2">
       {
         site.hobbies.map((h) => (
-          <div class="reveal rounded-lg border border-[var(--color-border)] bg-[rgba(5,18,30,0.6)] p-5 transition-colors hover:border-[var(--color-accent)]">
-            <h2 class="font-display font-medium text-[var(--color-fg)]">{h.title}</h2>
-            <p class="mt-1 text-sm text-[var(--color-muted)]">{h.blurb}</p>
+          <div class="reveal flex flex-col rounded-lg border border-[var(--color-border)] bg-[rgba(5,18,30,0.6)] p-6 transition-colors hover:border-[var(--color-accent)]">
+            <p class="font-mono text-[0.65rem] uppercase tracking-[0.2em] text-[var(--color-accent-sky)]">{h.kicker}</p>
+            <h2 class="frost-text mt-2 font-display text-xl font-medium">{h.title}</h2>
+            <p class="mt-3 text-sm leading-relaxed text-[var(--color-body)]">{h.blurb}</p>
+            <ul class="mt-4 flex flex-wrap gap-2">
+              {h.tags.map((t) => <li class="hud-chip">{t}</li>)}
+            </ul>
           </div>
         ))
       }

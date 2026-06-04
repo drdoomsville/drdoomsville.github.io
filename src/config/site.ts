@@ -13,7 +13,11 @@ export interface TimelineEntry {
 
 export interface Hobby {
   title: string;
+  /** Short mono eyebrow above the title (category / skill). */
+  kicker: string;
   blurb: string;
+  /** Highlight chips — cuisines, notable builds, etc. */
+  tags: string[];
 }
 
 export interface NavItem {
@@ -139,13 +143,24 @@ export const site: SiteConfig = {
       ],
     },
   ],
-  // TODO(content): the resume has no personal details — replace the placeholders
-  // below with a real note, or tell me to drop the Personal section entirely.
+  // TODO(content): `family` is a placeholder note — replace with a real one, or
+  // tell me to drop it. The hobbies below are real (sourced from docs/hobbies/).
   family:
     'Based in Charlotte, North Carolina. Thirty years in, and I still get a kick out of shipping technology that makes hard, regulated work simpler.',
   hobbies: [
-    { title: 'Add a hobby', blurb: 'TODO(content): something you do outside work.' },
-    { title: 'Add a hobby', blurb: 'TODO(content): a second interest.' },
-    { title: 'Add a hobby', blurb: 'TODO(content): a third interest.' },
+    {
+      title: 'Cooking & Culinary Arts',
+      kicker: 'Pitmaster & Caterer',
+      blurb:
+        'A passionate home cook and backyard pitmaster with catering experience from intimate plated dinners to feeding a crowd at tournaments. Comfortable across 10+ cuisines — Classic American and Chinese at the core, with Cajun, French, Filipino, Korean, and Thai in regular rotation.',
+      tags: ['BBQ / Pitmaster', 'Prime Rib au Jus', 'Pan-Seared Scallops', 'Sui Mai', 'Lechon Kawali', '10+ cuisines'],
+    },
+    {
+      title: 'Woodworking',
+      kicker: 'Maker · 12 Years',
+      blurb:
+        'Twelve years building functional, family-driven pieces — a corner entertainment cabinet, a 12-foot storage window seat, open pantry cabinetry, and built-in desks for the kids. Each one designed, planned, and executed independently on a full shop with custom hand-built jigs.',
+      tags: ['Entertainment Cabinet', '12-ft Window Seat', 'Pantry Cabinetry', 'Built-in Desks', 'Custom Jigs'],
+    },
   ],
 };

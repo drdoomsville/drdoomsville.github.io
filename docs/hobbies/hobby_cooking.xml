@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<personal_website>
+  <section name="hobby">
+
+    <hobby>
+      <name>Cooking &amp; Culinary Arts</name>
+      <category>Food &amp; Culinary</category>
+      <description>
+        Passionate home cook with catering experience spanning intimate private
+        dinners to large-scale events. Comfortable across a wide range of cuisines
+        including Classic American, Chinese, Southern, BBQ, Cajun, French, Japanese,
+        Korean, Thai, Filipino, and Indian. Equally at home executing a plated beef
+        tenderloin dinner for 20 or feeding a crowd at a basketball tournament.
+      </description>
+      <skill_level>Advanced Home Cook / Semi-Professional</skill_level>
+      <highlights>
+        <item>Backyard pitmaster experienced on offset smokers, pellet grills, and Big
+        Green Egg — proteins include brisket, ribs, pulled pork, chicken thighs,
+        bacon, and salmon</item>
+        <item>Signature dishes include prime rib with au jus, pan-seared scallops,
+        swimming rama, sui mai, and lechon kawali</item>
+        <item>Catering experience across private parties, weddings (Filipino/American
+        fusion menus), dragon boat events, and basketball tournaments</item>
+        <item>Core mastery in Classic American and Chinese cuisine with working
+        proficiency across 10+ culinary traditions</item>
+      </highlights>
+      <cuisines>
+        <cuisine>Classic American</cuisine>
+        <cuisine>Chinese</cuisine>
+        <cuisine>Southern</cuisine>
+        <cuisine>BBQ</cuisine>
+        <cuisine>Cajun</cuisine>
+        <cuisine>French</cuisine>
+        <cuisine>Japanese</cuisine>
+        <cuisine>Korean</cuisine>
+        <cuisine>Thai</cuisine>
+        <cuisine>Filipino</cuisine>
+        <cuisine>Indian</cuisine>
+      </cuisines>
+      <signature_dishes>
+        <dish>Prime Rib with Au Jus</dish>
+        <dish>Roasted Potatoes</dish>
+        <dish>Glazed Carrots</dish>
+        <dish>Swimming Rama</dish>
+        <dish>Pan Seared Scallops</dish>
+        <dish>Sui Mai</dish>
+        <dish>Lechon Kawali</dish>
+        <dish>Beef Tenderloin with All the Fixings</dish>
+      </signature_dishes>
+      <catering_events>
+        <event>Private dinner parties</event>
+        <event>Weddings (Filipino/American fusion menus)</event>
+        <event>Dragon boat events</event>
+        <event>Basketball tournaments</event>
+      </catering_events>
+      <equipment>
+        <tool>Offset Smoker</tool>
+        <tool>Pellet Grill</tool>
+        <tool>Big Green Egg</tool>
+      </equipment>
+    </hobby>
+
+  </section>
+</personal_website>

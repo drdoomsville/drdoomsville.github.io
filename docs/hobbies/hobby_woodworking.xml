@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<personal_website>
+  <section name="hobby">
+
+    <hobby>
+      <name>Woodworking</name>
+      <category>Craftsmanship &amp; Home Improvement</category>
+      <description>
+        Practiced woodworking for 12 years with a focus on functional, family-driven
+        projects that improved the home. Built everything from large entertainment
+        cabinets to custom furniture using a full shop setup including table saw,
+        miter saw, router, circular saw, dust collector, and a series of custom
+        hand-built jigs. Projects were designed, planned, and executed independently
+        — built to last, not just to look good.
+      </description>
+      <skill_level>Advanced (Semi-Professional)</skill_level>
+      <status>Former — 12 years active</status>
+      <highlights>
+        <item>Built a massive corner entertainment cabinet housing a 45" TV, DVD/VHS
+        storage, and full cable management — designed and executed from scratch</item>
+        <item>Constructed a 12-foot window seat with hinged storage lids for toys,
+        games, and linens</item>
+        <item>Built open pantry wall cabinetry and shelving for the kitchen</item>
+        <item>Designed and built student desks fitted below bedroom windows for
+        the kids</item>
+        <item>Full shop setup with power tools and custom hand jigs; practiced across
+        12 years of continuous home and family projects</item>
+      </highlights>
+      <projects>
+        <project>
+          <name>Corner Entertainment Cabinet</name>
+          <description>Massive corner unit housing a 45" TV, DVD and VHS storage,
+          with full cable management and concealment</description>
+        </project>
+        <project>
+          <name>12-Foot Window Seat</name>
+          <description>Full-length window seat with hinged opening lids for storing
+          toys, games, pillows, and comfort items</description>
+        </project>
+        <project>
+          <name>Open Pantry Wall Cabinetry</name>
+          <description>Custom wall cabinets and shelving installed as an open pantry
+          in the kitchen</description>
+        </project>
+        <project>
+          <name>Boys Bedroom Student Desks</name>
+          <description>Built-in student desks fitted below bedroom windows for
+          the kids</description>
+        </project>
+      </projects>
+      <equipment>
+        <tool>Table Saw</tool>
+        <tool>Miter Saw</tool>
+        <tool>Router</tool>
+        <tool>Circular Saw</tool>
+        <tool>Dust Collector</tool>
+        <tool>Sanders</tool>
+        <tool>Custom Hand Jigs</tool>
+        <tool>Full Hand Tool Set</tool>
+      </equipment>
+    </hobby>
+
+  </section>
+</personal_website>
