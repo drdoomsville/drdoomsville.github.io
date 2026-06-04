@@ -8,7 +8,7 @@ I was brought onto the project mid-stream, initially just to lend a hand. But wi
 
 ## Building Something Special — the Team and the Product
 
-The codebase wasn't just a cash-register app. It was a sophisticated n-tier application — close to 5,000 lines — designed to run across multiple retail chains simultaneously. Petco was deploying it as their **first-ever POS system**, and Eagle and Giant Eagle grocery stores were on the rollout list too. By the time the year was out, the system was live in over 20 stores across more than five separate chains.
+The codebase wasn't just a cash-register app. It was a sophisticated n-tier application — close to 5,000 lines — designed to run across multiple retail chains simultaneously. Petco was deploying it as their **first-ever POS system**, and Eagles and Giant Eagle grocery stores were on the rollout list too. By the time the year was out, the system was live in over 20 stores across more than five separate chains.
 
 For 1995, this was remarkable. Multi-tenant retail software, running on a unified architecture, deployed at that scale? The industry hadn't seen much like it.
 
