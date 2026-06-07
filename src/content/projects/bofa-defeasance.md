@@ -3,7 +3,7 @@ title: Commercial Loan Defeasance Engine
 summary: Two-person build (with a former Lockheed Skunk Works engineer) of a recursive bond-optimization engine that swaps commercial-loan collateral for a precisely structured portfolio of T-bills, notes, and bonds — holding payment coverage inside a narrow threshold across a $236B loan portfolio.
 tech: ["Recursive Optimization", "MVC Architecture", "U.S. Treasury Securities", "Financial Algorithms"]
 role: Software Engineer (Contract)
-timeframe: "Mid-2000s"
+timeframe: "2007"
 order: 9
 ---
 

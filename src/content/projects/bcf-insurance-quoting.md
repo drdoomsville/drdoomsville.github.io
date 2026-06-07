@@ -3,7 +3,7 @@ title: Real-Time Comparative Insurance Quoting
 summary: Engineer at a 35-person startup (10 developers) building real-time multi-carrier insurance comparison years before Progressive popularized it — one customer entry, simultaneous quotes from many carriers via ACORD-standard XML integrations and resilient screen-scraping connectors for carriers without APIs.
 tech: ["ACORD XML", "REST / XML Web Services", "Screen Scraping", "Carrier Integrations"]
 role: Software Engineer
-timeframe: "Mid-2000s"
+timeframe: "2005"
 order: 10
 ---
 
