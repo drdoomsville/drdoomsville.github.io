@@ -47,8 +47,8 @@ export interface SiteConfig {
 }
 
 export const site: SiteConfig = {
-  name: 'William Kocak',
-  title: 'William Kocak — AI Engineering Leader',
+  name: 'William Sonny Kocak',
+  title: 'William Sonny Kocak — AI Engineering Leader',
   kicker: 'AI Engineering Leader · Charlotte, NC',
   tagline:
     'AI and enterprise technology leader building production-scale, responsibly-governed AI across banking, pharma, and financial services.',
