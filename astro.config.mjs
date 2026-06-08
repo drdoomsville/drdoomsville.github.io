@@ -5,8 +5,7 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  // TODO(content): replace with your real domain before deploy
-  site: 'https://example.com',
+  site: 'https://drdoomsville.github.io',
   integrations: [sitemap()],
   vite: {
     plugins: [tailwindcss()],
