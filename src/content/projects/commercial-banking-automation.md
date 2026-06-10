@@ -4,7 +4,7 @@ summary: Enterprise automation for Commercial Banking and Lending delivering $20
 tech: ["RPA", "OCR", "APIs", "AI / NLP", "Agile"]
 role: Solution Architect
 timeframe: "2020 – 2021"
-order: 6
+order: 8
 ---
 
 ## Problem

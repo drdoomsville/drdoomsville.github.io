@@ -4,7 +4,7 @@ summary: A 0-to-1 enterprise RPA Center of Excellence, with bank-wide architectu
 tech: ["RPA", "UiPath", "Blue Prism", "SAS", "ETL"]
 role: Automation Lead, Compliance
 timeframe: "2018 – 2020"
-order: 5
+order: 9
 ---
 
 ## Problem

@@ -4,7 +4,7 @@ summary: Senior Pega architect on the technology stack behind the 2020 U.S. Cens
 tech: ["Pega", "Google Maps API", "Mobile (GPS / Tablet)", "Multi-Channel Survey", "Geospatial"]
 role: Senior Pega Architect
 timeframe: "2016 – 2018"
-order: 8
+order: 6
 ---
 
 ## Problem

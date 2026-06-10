@@ -4,7 +4,7 @@ summary: Founded an enterprise Responsible AI governance function aligned to glo
 tech: ["AI Governance", "EU AI Act", "NIST AI RMF", "Model Risk Management", "FDA / HIPAA"]
 role: Founder & Lead, Responsible AI
 timeframe: "2023 – Present"
-order: 2
+order: 12
 ---
 
 ## Problem

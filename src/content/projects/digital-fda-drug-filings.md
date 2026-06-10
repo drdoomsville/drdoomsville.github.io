@@ -4,7 +4,7 @@ summary: LLM-powered automation of regulatory submissions, cutting clinical stud
 tech: ["LLMs", "NLP", "Document Automation", "MLOps", "Python"]
 role: AI Engineering Lead
 timeframe: "2024"
-order: 3
+order: 11
 ---
 
 ## Problem

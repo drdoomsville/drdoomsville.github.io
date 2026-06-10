@@ -4,7 +4,7 @@ summary: Two-person build (with a former Lockheed Skunk Works engineer) of a rec
 tech: ["Recursive Optimization", "MVC Architecture", "U.S. Treasury Securities", "Financial Algorithms"]
 role: Software Engineer (Contract)
 timeframe: "2007"
-order: 9
+order: 5
 ---
 
 ## Problem

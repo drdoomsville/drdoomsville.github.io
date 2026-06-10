@@ -4,7 +4,7 @@ summary: A 0-to-1, production-scale enterprise AI operating model powering reusa
 tech: ["LLMs", "Agentic AI", "RAG", "MLOps", "AWS Bedrock", "Python"]
 role: Associate Director, AI Engineering
 timeframe: "2023 – Present"
-order: 1
+order: 13
 ---
 
 ## Problem
