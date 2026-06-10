@@ -4,7 +4,6 @@ summary: Pega case management and robotic automation for Fortune 500 clients acr
 tech: ["Pega PRPC", "Robotic Automation", "Case Management", "Citrix"]
 role: Senior Architect
 timeframe: "2014 – 2018"
-order: 7
 ---
 
 ## Problem

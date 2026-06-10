@@ -3,9 +3,9 @@ import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionHeading from '../../components/SectionHeading.astro';
 import ProjectCard from '../../components/ProjectCard.astro';
-import { sortByOrder, padIndex } from '../../lib/projects';
+import { sortByTimeframe, padIndex } from '../../lib/projects';
 
-const projects = sortByOrder(await getCollection('projects'));
+const projects = sortByTimeframe(await getCollection('projects'));
 ---
 
 <BaseLayout title="Projects" description="Selected software projects and case studies.">
@@ -17,10 +17,10 @@ const projects = sortByOrder(await getCollection('projects'));
         <p class="text-[var(--color-muted)]">Projects coming soon.</p>
       ) : (
         <div class="grid gap-5 sm:grid-cols-2">
-          {projects.map((p) => (
+          {projects.map((p, i) => (
             <ProjectCard
               href={`/projects/${p.id}`}
-              index={padIndex(p.data.order)}
+              index={padIndex(i + 1)}
               title={p.data.title}
               summary={p.data.summary}
               tech={p.data.tech}

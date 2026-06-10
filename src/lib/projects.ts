@@ -1,17 +1,25 @@
 export interface ProjectMeta {
-  order: number;
+  timeframe: string;
 }
 
 export interface HasProjectMeta {
   data: ProjectMeta;
 }
 
-/** Returns a new array sorted ascending by `data.order` (lower first). */
-export function sortByOrder<T extends HasProjectMeta>(items: T[]): T[] {
-  return [...items].sort((a, b) => a.data.order - b.data.order);
+/** Extracts the start year from a timeframe string, e.g. "January 2000 – 2003" -> 2000. */
+export function parseStartYear(timeframe: string): number {
+  const match = timeframe.match(/\d{4}/);
+  return match ? Number(match[0]) : Number.MAX_SAFE_INTEGER;
 }
 
-/** Two-digit, zero-padded display index for orders 1–99, e.g. 8 -> "08". */
-export function padIndex(order: number): string {
-  return String(order).padStart(2, '0');
+/** Returns a new array sorted oldest-first by the start year of `data.timeframe`. */
+export function sortByTimeframe<T extends HasProjectMeta>(items: T[]): T[] {
+  return [...items].sort(
+    (a, b) => parseStartYear(a.data.timeframe) - parseStartYear(b.data.timeframe),
+  );
+}
+
+/** Two-digit, zero-padded display index for positions 1–99, e.g. 8 -> "08". */
+export function padIndex(position: number): string {
+  return String(position).padStart(2, '0');
 }

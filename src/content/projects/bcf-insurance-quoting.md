@@ -4,7 +4,6 @@ summary: Engineer at a 35-person startup (10 developers) building real-time mult
 tech: ["ACORD XML", "REST / XML Web Services", "Screen Scraping", "Carrier Integrations"]
 role: Software Engineer
 timeframe: "2005"
-order: 4
 ---
 
 ## Problem

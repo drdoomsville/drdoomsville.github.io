@@ -4,7 +4,6 @@ summary: Senior developer (#2 of 15) on a 32-bit VB / SQL Server / OLE-COM n-tie
 tech: ["Visual Basic (32-bit)", "Microsoft SQL Server", "OLE/COM", "n-tier Architecture", "Point of Sale"]
 role: Senior Developer
 timeframe: "1995"
-order: 2
 ---
 
 ## Problem

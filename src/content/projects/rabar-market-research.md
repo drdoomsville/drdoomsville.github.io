@@ -4,7 +4,6 @@ summary: C++ engineer (1 of 8, fully remote) on a composable Document/View tradi
 tech: ["C++", "Document/View Framework", "Quantitative Trading", "Systematic Trend-Following", "Futures & Equities"]
 role: C++ Software Engineer
 timeframe: "January 2000 – 2003"
-order: 3
 ---
 
 ## Problem
